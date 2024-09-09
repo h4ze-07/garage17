@@ -200,7 +200,6 @@ input:-webkit-autofill:active {
 }
 
 header,
-main,
 footer,
 section {
 	display: block;
@@ -784,22 +783,20 @@ section {
 /* MAIN CAR SECTION */
 
 .main-car {
-	overflow: visible;
-}
+    overflow: visible;
 
-.main-car .container {
-	overflow: visible;
-}
-
-.main-car__inner {
-	position: sticky;
-	top: 0;
+    .container {
+        overflow: visible;
+    }
 }
 
 .middle-car {
-	height: 200vh;
-	overflow: hidden;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
 }
+
 
 .stripe {
 	display: flex;
@@ -817,13 +814,14 @@ section {
 
 .car-img {
 	position: absolute;
-	top: 50%;
+    top: 40%;
 	left: 50%;
-	transform: translate(-50%, -20%);
-	width: 120px;
+	transform: translate(-50%, 0);
+	width: 220px;
 }
 
 .car-cards__wrap {
+    margin-top: 50vh;
 	display: flex;
 	justify-content: space-between;
 }
