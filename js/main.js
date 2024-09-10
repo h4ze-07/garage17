@@ -34,6 +34,22 @@ burger.addEventListener('click', () => {
 // SWIPER
 
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 5,
-    spaceBetween: 15,
+    slidesPerView: 1.5,
+    spaceBetween: 16,
+    initialSlide: 2,
+    breakpoints: {  
+        '640': {
+          slidesPerView: 2.5,
+          spaceBetween: 16, 
+        },
+        '800': {
+          slidesPerView: 3.5,
+          spaceBetween: 16, 
+        },
+        '1200': {
+          slidesPerView: 5,
+          spaceBetween: 16, 
+        },
+
+    },
 });

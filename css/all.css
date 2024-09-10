@@ -212,7 +212,6 @@ section {
 
 body.stopScroll {
 	overflow: hidden;
-	scrollbar-gutter: stable;
 }
 
 .main-btn {
@@ -565,7 +564,6 @@ body.stopScroll {
 
 .big-card {
 	margin-top: 70px;
-	margin-bottom: 180px;
 }
 
 .big-card__wrap {
@@ -649,6 +647,10 @@ body.stopScroll {
 /* BIG CARD SECTION */
 
 /* SERVICES SECTION */
+
+.services {
+    padding-top: 180px;
+}
 
 .services__inner {
 	overflow: hidden;
@@ -878,14 +880,16 @@ body.stopScroll {
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
+    gap: 20px;
 }
 
 .welcome__img {
-	position: absolute;
+	position: relative;
+    z-index: 2;
 	width: 370px;
 	height: 331px;
-
-	top: 22px;
+    flex-shrink: 0;
+	bottom: -50px;
 	left: 0;
 }
 
@@ -1117,8 +1121,7 @@ body.stopScroll {
 .free-auto__img {
 	width: 511px;
 	height: 306px;
-	position: relative;
-	z-index: 2;
+	
 
 	img {
 		width: 100%;
@@ -1398,7 +1401,13 @@ body.stopScroll {
 	margin-top: 40px;
 }
 
+.swiper-wrapper > :nth-child(1) {
+    margin-left: 16px;
+}
+
 .swiper-slide {
+    width: 372px !important;
+    height: 302px !important;
 }
 
 /* GALLERY SECTION */
