@@ -210,6 +210,11 @@ section {
 
 /* COMMON STYLES */
 
+body.stopScroll {
+	overflow: hidden;
+	scrollbar-gutter: stable;
+}
+
 .main-btn {
 	display: flex;
 	align-items: center;
@@ -217,12 +222,19 @@ section {
 	border-radius: 50px;
 	background: #1742d9;
 	padding: 11px 40px;
+	transition: all 0.3s;
 
 	span {
 		color: #fff;
 		font-weight: 500;
 		line-height: 140%;
 	}
+}
+
+.mobile-btn:hover,
+.cards-btn:hover,
+.main-btn:hover {
+	background: rgba(21, 56, 178, 1);
 }
 
 .line__title {
@@ -254,12 +266,17 @@ section {
 /* HEADER STYLES */
 
 .header {
-	background: rgba(255, 255, 255, 0.05);
+	background: rgba(29, 32, 37, 0.3);
 	backdrop-filter: blur(12.5px);
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;
+	transition: top 0.3s ease-in-out;
+}
+
+.header.hidden {
+	top: -100px;
 }
 
 .header__inner {
@@ -321,6 +338,126 @@ section {
 		color: #fff;
 		line-height: normal;
 	}
+}
+
+.burger {
+	display: none;
+	flex-direction: column;
+	gap: 4px;
+	width: 32px;
+	height: 32px;
+	padding: 6px 2px;
+	cursor: pointer;
+}
+
+.burger span {
+	display: block;
+	border-radius: 5px;
+	width: 100%;
+	height: 4px;
+	background: #fff;
+	transition: all 0.3s;
+}
+
+.burger.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.burger.active span:nth-child(1) {
+	transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger.active span:nth-child(3) {
+	transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.mobile-menu {
+	background: url("../images/form-bg.png");
+	background-color: rgba(255, 255, 255, 1);
+	background-size: cover;
+	background-blend-mode: multiply;
+
+	display: none;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100vh;
+	z-index: 8;
+    transition: left 0.3s;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu__list {
+	margin-top: 145px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.mobile-menu__item {
+	color: #000;
+	font-size: 28px;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+	display: block;
+	overflow: hidden;
+}
+
+.mobile-menu__item::before {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	left: -100%;
+
+	width: 100%;
+	height: 2px;
+	background: #000;
+	transition: left 0.4s;
+}
+
+.mobile-menu__item:hover::before {
+	left: 0;
+}
+
+.mobile-btn {
+    padding: 9px 18px;
+    transition: all 0.3s;
+	background-color: rgba(23, 66, 217, 1);
+	border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 64px auto;
+    width: fit-content;
+
+
+	span {
+		color: #fff;
+		font-weight: 600;
+		line-height: 140%;
+	}
+}
+
+.mobile-lang {
+    margin-top: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    p {
+        color: #000;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
 }
 
 /* HEADER STYLES */
@@ -408,6 +545,7 @@ section {
 	justify-content: center;
 	padding: 15px 0;
 	gap: 8px;
+	transition: all 0.3s;
 
 	span {
 		color: #fff;
@@ -415,6 +553,10 @@ section {
 		font-weight: 600;
 		line-height: 140%;
 	}
+}
+
+.hero-btn-price:hover {
+	background: rgba(255, 255, 255, 0.3);
 }
 
 /* HERO STYLES */
@@ -578,6 +720,7 @@ section {
 	background: #1742d9;
 	width: fit-content;
 	padding: 8px 16px;
+	transition: all 0.3s;
 
 	span {
 		color: #fff;
@@ -783,20 +926,19 @@ section {
 /* MAIN CAR SECTION */
 
 .main-car {
-    overflow: visible;
+	overflow: visible;
 
-    .container {
-        overflow: visible;
-    }
+	.container {
+		overflow: visible;
+	}
 }
 
 .middle-car {
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    overflow: hidden;
+	height: 100vh;
+	position: sticky;
+	top: 0;
+	overflow: hidden;
 }
-
 
 .stripe {
 	display: flex;
@@ -814,14 +956,14 @@ section {
 
 .car-img {
 	position: absolute;
-    top: 40%;
+	top: 40%;
 	left: 50%;
 	transform: translate(-50%, 0);
 	width: 220px;
 }
 
 .car-cards__wrap {
-    margin-top: 50vh;
+	margin-top: 50vh;
 	display: flex;
 	justify-content: space-between;
 }
@@ -834,16 +976,16 @@ section {
 }
 
 .car-cards__left > :nth-child(even) {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .car-cards__right > :nth-child(odd) {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .car-card {
 	height: 408px;
-    max-width: 453px;
+	max-width: 453px;
 	border-radius: 15px;
 	border: 1px solid rgba(29, 32, 37, 0.14);
 	background: rgba(255, 255, 255, 0.05);
@@ -859,7 +1001,7 @@ section {
 	display: flex;
 	align-items: center;
 	gap: 8px;
-    margin-bottom: 24px;
+	margin-bottom: 24px;
 }
 
 .car-card__num {
@@ -875,32 +1017,31 @@ section {
 }
 
 .car-card__icon {
-    width: 35px;
-    height: 35px;
-    border-radius: 4px;
-    background: #1742D9;
-    padding: 6px 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	width: 35px;
+	height: 35px;
+	border-radius: 4px;
+	background: #1742d9;
+	padding: 6px 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .car-card__title {
-    color: #1D2025;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;  
+	color: #1d2025;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%;
 }
 
 .car-card__text {
-    color: #1D2025;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+	color: #1d2025;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
 }
-
 
 /* MAIN CAR SECTION */
 
@@ -954,6 +1095,7 @@ section {
 	align-items: center;
 	gap: 8px;
 	width: fit-content;
+	transition: all 0.3s;
 
 	span {
 		color: #1742d9;
@@ -961,6 +1103,10 @@ section {
 		font-weight: 600;
 		line-height: 140%;
 	}
+}
+
+.free-auto__btn:hover {
+	background: rgba(225, 225, 225, 1);
 }
 
 .free-auto__left {
@@ -1136,7 +1282,7 @@ section {
 
 .form-btn {
 	border-radius: 50px;
-	background: #1742d9;
+	background-color: #1742d9;
 	padding: 16px 60px;
 	display: flex;
 	gap: 8px;
@@ -1145,16 +1291,16 @@ section {
 	cursor: pointer;
 	transition: all 0.3s;
 
-	& :hover {
-		opacity: 0.8;
-	}
-
 	span {
 		color: #fff;
 		font-size: 20px;
 		font-weight: 600;
 		line-height: 140%; /* 28px */
 	}
+}
+
+.form-btn:hover {
+	background-color: rgba(21, 56, 178, 1);
 }
 
 .form-links > span {
@@ -1167,6 +1313,14 @@ section {
 .links {
 	display: flex;
 	gap: 11px;
+}
+
+.links a {
+	transition: opacity 0.3s;
+}
+
+.links a:hover {
+	opacity: 0.8;
 }
 
 .form-right {
@@ -1240,6 +1394,13 @@ section {
 	overflow: hidden;
 }
 
+.mySwiper {
+	margin-top: 40px;
+}
+
+.swiper-slide {
+}
+
 /* GALLERY SECTION */
 
 /* FOOTER SECTION */
@@ -1284,6 +1445,7 @@ section {
 	color: #fff;
 	font-size: 20px;
 	font-weight: 500;
+	transition: all 0.3s;
 }
 
 .footer__info-block {
@@ -1337,6 +1499,13 @@ section {
 	display: flex;
 	align-items: center;
 	gap: 5px;
+	transition: all 0.3s;
+}
+
+.footer-links-sm svg:hover,
+.footer__madeby:hover,
+a.footer-text:hover {
+	opacity: 0.7;
 }
 
 /* FOOTER SECTION */
