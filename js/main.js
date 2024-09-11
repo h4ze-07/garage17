@@ -182,7 +182,7 @@ if (document.querySelector('.main')) {
     gsap.from(".form-right h3", {
         opacity: 0,
         duration: 1.5,
-        x: -80,
+        x: 80,
         scrollTrigger: {
             trigger: ".form-right h3",
             start: "top 80%",
