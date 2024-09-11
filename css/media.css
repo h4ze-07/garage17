@@ -2,6 +2,10 @@
 	.big-card__title {
 		font-size: 22px;
 	}
+
+    .car-img {
+        top: 30%;
+    }
 }
 
 @media screen and (width <= 1400px) {
@@ -167,6 +171,14 @@
 			font-size: 30px;
 		}
 	}
+
+    .nav {
+        height: 46px;
+    }
+
+    .logo {
+        width: 106px;
+    }
 
 	.big-card__left .main-btn {
 		padding: 9px 18px;
@@ -385,7 +397,7 @@
 		margin-top: 12px;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 0;
+		gap: 10px;
 	}
 
 	.car-card {
@@ -498,6 +510,10 @@
 	.car-img {
 		display: none;
 	}
+
+    .car-card__title {
+        font-size: 20px;
+    }
 
 	.car-cards__left,
 	.car-cards__right {
