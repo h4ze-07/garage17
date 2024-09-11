@@ -383,11 +383,11 @@ body.stopScroll {
 	width: 100%;
 	height: 100vh;
 	z-index: 8;
-    transition: left 0.3s;
+	transition: left 0.3s;
 }
 
 .mobile-menu.active {
-    left: 0;
+	left: 0;
 }
 
 .mobile-menu__list {
@@ -425,16 +425,15 @@ body.stopScroll {
 }
 
 .mobile-btn {
-    padding: 9px 18px;
-    transition: all 0.3s;
+	padding: 9px 18px;
+	transition: all 0.3s;
 	background-color: rgba(23, 66, 217, 1);
 	border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin: 64px auto;
-    width: fit-content;
-
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	margin: 64px auto;
+	width: fit-content;
 
 	span {
 		color: #fff;
@@ -444,19 +443,19 @@ body.stopScroll {
 }
 
 .mobile-lang {
-    margin-top: 64px;
+	margin-top: 64px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
 
-    p {
-        color: #000;
-        font-size: 18px;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
+	p {
+		color: #000;
+		font-size: 18px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
 }
 
 /* HEADER STYLES */
@@ -469,7 +468,7 @@ body.stopScroll {
 	background: url("../images/hero-bg-min.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-    background-position: 70% center;
+	background-position: 70% center;
 
 	.container {
 		display: flex;
@@ -595,6 +594,7 @@ body.stopScroll {
 	display: flex;
 	gap: 40px;
 	align-items: center;
+	justify-content: space-between;
 }
 
 .big-card__left {
@@ -605,6 +605,7 @@ body.stopScroll {
 	background-image: url("../images/big-card-bg2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: right;
 	width: fit-content;
 	padding-left: 24px;
 
@@ -634,38 +635,42 @@ body.stopScroll {
 }
 
 .big-card__right {
-    position: relative;
-    padding-right: 30px;
+	position: relative;
+	padding-right: 30px;
 }
 
 .big-card__right .wrap {
-    display: flex;
-    gap: 24px;
+	display: flex;
+	gap: 24px;
+}
+
+.big-card__title.blue-title.mob {
+	display: none;
 }
 
 .big-img__circle {
-    position: relative;
-    top: -30px;
+	position: relative;
+	top: -30px;
 	width: 111px;
 	height: 111px;
-    flex-shrink: 0;
+	flex-shrink: 0;
 	border-radius: 9999px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: #1742d9;
 
-    img {
-        width: 50px;
-        height: 50px;
-    }
+	img {
+		width: 50px;
+		height: 50px;
+	}
 }
 /* BIG CARD SECTION */
 
 /* SERVICES SECTION */
 
 .services {
-    padding-top: 180px;
+	padding-top: 180px;
 }
 
 .services__inner {
@@ -896,15 +901,15 @@ body.stopScroll {
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
-    gap: 20px;
+	gap: 20px;
 }
 
 .welcome__img {
 	position: relative;
-    z-index: 2;
+	z-index: 2;
 	width: 370px;
 	height: 331px;
-    flex-shrink: 0;
+	flex-shrink: 0;
 	bottom: -50px;
 	left: 0;
 }
@@ -1137,7 +1142,6 @@ body.stopScroll {
 .free-auto__img {
 	width: 511px;
 	height: 306px;
-	
 
 	img {
 		width: 100%;
@@ -1418,12 +1422,12 @@ body.stopScroll {
 }
 
 .swiper-wrapper > :nth-child(1) {
-    margin-left: 16px;
+	margin-left: 16px;
 }
 
 .swiper-slide {
-    width: 372px !important;
-    height: 302px !important;
+	width: 372px !important;
+	height: 302px !important;
 }
 
 /* GALLERY SECTION */
@@ -1535,25 +1539,65 @@ a.footer-text:hover {
 
 /* FOOTER SECTION */
 
-
-
-
 /* FORM PAGE */
 
-body, html {
-    height: 100%;
-}
 
 .form-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .main-form {
-    flex-grow: 1;
-    background: url("../images/form-bg.png");
+	flex-grow: 1;
+	background: url("../images/form-bg.png");
 	background-color: rgba(255, 255, 255, 1);
 	background-size: cover;
 	background-blend-mode: multiply;
+
+	padding: 159px 0;
+}
+
+.form__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.form-inputs {
+		max-width: 591px;
+		width: 100%;
+	}
+
+	.input-field {
+		width: 100%;
+		border-radius: 4px;
+		background: rgba(29, 32, 37, 0.05);
+	}
+}
+
+.form-page-title {
+	max-width: 975px;
+	text-align: center;
+	color: #1d2025;
+	font-size: 48px;
+	font-weight: 600;
+	line-height: 130%;
+	margin-bottom: 15px;
+}
+
+.form-page-text {
+	max-width: 606px;
+	color: #1d2025;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 32px;
+
+    span {
+        font-weight: 700; 
+    }
+}
+
+.form-container {
+    padding: 0px 20px;
 }

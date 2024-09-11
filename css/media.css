@@ -1,3 +1,9 @@
+@media screen and (width <= 1440px) {
+	.big-card__title {
+		font-size: 22px;
+	}
+}
+
 @media screen and (width <= 1400px) {
 	.free-auto__title {
 		white-space: wrap;
@@ -44,6 +50,33 @@
 
 	.card-title {
 		font-size: 22px;
+	}
+
+	.big-card__title.blue-title {
+		display: none;
+	}
+
+	.big-card__title.blue-title.mob {
+		display: block;
+	}
+
+	.big-card__text {
+		font-size: 16px;
+		margin: 16px 0;
+	}
+
+	.big-img__circle {
+		width: 60px;
+		height: 60px;
+
+		img {
+			width: 26px;
+			height: 26px;
+		}
+	}
+
+	.wrap > img {
+		width: 360px;
 	}
 }
 
@@ -133,6 +166,41 @@
 		span {
 			font-size: 30px;
 		}
+	}
+
+	.big-card__left .main-btn {
+		padding: 9px 18px;
+
+		span {
+			font-size: 16px;
+		}
+	}
+
+	.wrap > img {
+		width: 300px;
+	}
+
+	.big-card__title {
+		font-size: 16px;
+	}
+
+	.big-card__left {
+		padding: 25px 0;
+		padding-left: 8px;
+	}
+
+	.big-card__right .wrap {
+		gap: 0;
+	}
+
+	.big-img__circle {
+		top: 0;
+	}
+
+	.big-card__text {
+		font-size: 14px;
+		margin-top: 14px;
+		margin-bottom: 24px;
 	}
 
 	.hero {
@@ -416,6 +484,14 @@
 	.service-card10 {
 		padding: 20px;
 	}
+
+    .form-page-title {
+        font-size: 32px;
+    }
+
+    .form-page-text {
+        font-size: 16px;
+    }
 }
 
 @media screen and (width <= 820px) {
@@ -456,6 +532,36 @@
 	.free-auto {
 		margin-top: 90px;
 	}
+
+    .big-card__inner {
+        flex-direction: column;
+    }
+
+    .big-card__right {
+        padding-right: 0;
+    }
+
+    .big-card__left {
+        width: 100%;
+        background: url('../images/big-card-mobile.png');
+        background-position: 0% 70%;
+        background-repeat: no-repeat;
+        background-size: 120%;
+
+        padding-right: 8px;
+    }
+
+
+    .big-img__circle {
+        position: absolute;
+        top: -40px;
+        right: -10px;
+    }
+
+    .big-card__text,
+    .big-card__title {
+        padding-left: calc(22px - 8px);
+    }
 }
 
 @media screen and (width <= 800px) {
@@ -710,27 +816,25 @@
 		margin-bottom: 26px;
 	}
 
+	.hero-btns {
+		gap: 27px;
 
-    .hero-btns {
-        gap: 27px;
+		.main-btn {
+			padding: 9px 18px;
+			span {
+				font-size: 16px;
+			}
+		}
+	}
 
-        .main-btn {
-            padding: 9px 18px;
-            span {
-                font-size: 16px;
-            }
-        }
-    }
+	.hero-btn-price {
+		padding: 9px 0;
+		width: 154px;
 
-    .hero-btn-price {
-        padding: 9px 0;
-        width: 154px;
-
-        span {
-            font-size: 16px;
-        }
-
-    }
+		span {
+			font-size: 16px;
+		}
+	}
 
 	.services .line__title {
 		max-width: 214px;
@@ -740,6 +844,21 @@
 		top: 50%;
 		left: 20%;
 	}
+
+    .form-page-title {
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+
+    .form-page-text {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .main-form {
+        padding-top: 101px;
+        padding-bottom: 90px;
+    }
 }
 
 @media screen and (width <= 500px) {
