@@ -230,5 +230,35 @@ if (document.querySelector('.form-page-text')) {
 
 
 
+const datePick = document.getElementById('date');
+const timePick = document.getElementById('time');
+const datePlaceholder = document.getElementById('date-placeholder');
+const timePlaceholder = document.getElementById('time-placeholder');
+
+
+document.querySelector('.hidden-input-label1').addEventListener('click', () => {
+    if (datePick) {
+        datePick.showPicker();
+    }
+    // datePick.focus();
+})
+
+
+document.querySelector('.hidden-input-label2').addEventListener('click', () => {
+    if (timePick) {
+        timePick.showPicker();
+    }
+    // timePick.focus()
+})
+
+
+datePick.addEventListener('change', () => {
+    datePlaceholder.textContent = datePick.value;
+})
+
+timePick.addEventListener('change', () => {
+    timePlaceholder.textContent = timePick.value;
+})
+
 
 
